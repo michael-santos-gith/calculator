@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    overflow: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#bar-dark-light {
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background-color: #303135;
+}
+
+#area-calc {
+    height: 35vh;
+    position: relative;
+}
+
+#area-calc span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 5px;
+}
+
+#area-numbers {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.numbers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.numbers span {
+    padding: 6px 20px;
+    font-size: 2.2em;
+}
