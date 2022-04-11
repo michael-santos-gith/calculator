@@ -31,10 +31,18 @@ a {
     position: relative;
 }
 
+#area-calc hr {
+    position: absolute;
+    right: 18px;
+    bottom: 0;
+    border: 1px solid blue;
+    width: 90%;
+}
+
 #area-calc span {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 5px;
     margin-right: 5px;
 }
 
@@ -55,4 +63,12 @@ a {
 .numbers span {
     padding: 6px 20px;
     font-size: 2.2em;
+}
+
+.numbers a {
+    font-size: 0.8em;
+}
+
+.numbers .numbers-click {
+    color: #000;
 }
