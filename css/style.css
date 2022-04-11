@@ -35,8 +35,8 @@ a {
     position: absolute;
     right: 18px;
     bottom: 0;
-    border: 1px solid blue;
     width: 90%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 #area-calc span {
@@ -52,6 +52,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 5px;
 }
 
 .numbers {
@@ -61,14 +62,15 @@ a {
 }
 
 .numbers span {
-    padding: 6px 20px;
-    font-size: 2.2em;
+    padding: 0 20px;
+    font-size: 2em;
 }
 
-.numbers a {
-    font-size: 0.8em;
+.numbers i, #ac {
+    font-size: 0.625em;
+    color: #FF7432;
 }
 
-.numbers .numbers-click {
+.numbers .numbers-click span i  {
     color: #000;
 }
