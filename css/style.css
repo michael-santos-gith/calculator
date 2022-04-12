@@ -61,8 +61,15 @@ a {
     justify-content: space-between;
 }
 
+.numbers div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 60px;
+}
+
 .numbers span {
-    padding: 0 20px;
     font-size: 2em;
 }
 
