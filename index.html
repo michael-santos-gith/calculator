@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
     <!-- GOOGLE ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- GOOGLE FONTS -->
@@ -22,7 +21,7 @@
             <a href="#"><span<i class="fa fa-moon fa-inverse"></i></span></a>
         </div>
         <div id="area-calc">
-            <span>____</span>
+            <span id="show-number"></span>
             <hr/>
         </div>
         <div id="area-numbers">
@@ -45,19 +44,20 @@
                 <div><a href="#"><span><i class="fa-solid fa-minus fa-xs"></i></span></a></div>
             </div>
             <div class="numbers">
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">1</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">2</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">3</i></span></a></div>
+                <div><a class="numbers-click" href="#"><span><i id="um" class="fa-solid">1</i></span></a></div>
+                <div><a class="numbers-click" href="#"><span><i id="dois" class="fa-solid">2</i></span></a></div>
+                <div><a class="numbers-click" href="#"><span><i id="tres" class="fa-solid">3</i></span></a></div>
                 <div><a href="#"><span><i class="fa-solid fa-plus fa-xs"></i></span></a></div>
             </div>
             <div class="numbers">
                 <div><a href="#"><span><i class="fa-solid fa-plus-minus fa-xs"></i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">0</i></span></a></div>
+                <div><a class="numbers-click" href="#"><span><i id="zero" class="fa-solid">0</i></span></a></div>
                 <div><a class="numbers-click" href="#"><span><i class="fa-solid">,</i></span></a></div>
                 <div><a id="equals" href="#"><span><i class="fa-solid fa-equals fa-xs"></i></span></a></div>
             </div>
         </div>
     </div>
 
+    <script src="./js/script.js"></script>
 </body>
 </html>
