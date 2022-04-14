@@ -1,5 +1,6 @@
 let showNumber = document.querySelector('#show-number');
 let numbers = document.querySelectorAll('.numbers .numbers-click');
+let symbolsOperation = document.querySelectorAll('.numbers .symbols-operation');
 
 numbers.forEach(function(val, ind) {
     if (ind == 0) {
