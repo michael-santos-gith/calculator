@@ -3,88 +3,41 @@ let numbers = document.querySelectorAll('.numbers .numbers-click');
 let symbolsOperation = document.querySelectorAll('.numbers .symbols-operation');
 let calculateNumbers = '';
 
+function clickNumbers(ind, num) {
+    numbers[ind].addEventListener('click', function() {
+        calculateNumbers += numbers[ind].value = num;
+        showNumber.textContent += num;
+        console.log(calculateNumbers)
+    })
+}
+
 numbers.forEach(function(val, ind) {
     if (ind == 0) {
         numbers[ind].addEventListener('click', function() {
             showNumber.textContent = '';
         })
     } else if (ind == 1) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 7;
-            calculateNumbers += 7;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 7);
     } else if (ind == 2) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 8;
-            calculateNumbers += 8;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 8);
     } else if (ind == 3) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 9;
-            calculateNumbers += 9;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 9);
     } else if (ind == 4) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 4;
-            calculateNumbers += 4;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 4);
     } else if (ind == 5) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 5;
-            calculateNumbers += 5;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 5);
     } else if (ind == 6) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 6;
-            calculateNumbers += 6;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 6);
     } else if (ind == 7) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 1;
-            calculateNumbers += 1;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 1);
     } else if (ind == 8) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 2;
-            calculateNumbers += 2;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 2);
     } else if (ind == 9) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 3;
-            calculateNumbers += 3;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 3);
     } else if (ind == 10) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += 0;
-            calculateNumbers += 0;
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = 0);
     } else if (ind == 11) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent += '.';
-            calculateNumbers += '.';
-            console.log(calculateNumbers)
-
-        })
+        clickNumbers(ind, val = '.');
     }
 })
 
