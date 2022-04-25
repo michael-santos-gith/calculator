@@ -1,82 +1,93 @@
-let showNumber = document.querySelector('#show-number');
-let numbers = document.querySelectorAll('.numbers .numbers-click');
-let symbolsOperation = document.querySelectorAll('.numbers .symbols-operation');
-let calculateNumbers = '';
-
-function clickNumbers(ind, num) {
-    numbers[ind].addEventListener('click', function() {
-        calculateNumbers += numbers[ind].value = num;
-        showNumber.textContent += num;
-        console.log(calculateNumbers)
-    })
+onload = () => {
+    document.querySelector('#seven').onclick = () => digito(7);
+    document.querySelector('#eight').onclick = () => digito(8);
+    document.querySelector('#nine').onclick = () => digito(9);
+    document.querySelector('#four').onclick = () => digito(4);
+    document.querySelector('#five').onclick = () => digito(5);
+    document.querySelector('#six').onclick = () => digito(6);
+    document.querySelector('#one').onclick = () => digito(1);
+    document.querySelector('#two').onclick = () => digito(2);
+    document.querySelector('#three').onclick = () => digito(3);
+    document.querySelector('#zero').onclick = () => digito(0);
+    document.querySelector('#devide').onclick = () => operador('/');
+    document.querySelector('#multiply').onclick = () => operador('*');
+    document.querySelector('#minus').onclick = () => operador('-');
+    document.querySelector('#plus').onclick = () => operador('+');
+    document.querySelector('#comma').onclick = virgula;
+    document.querySelector('#clean').onclick = limpa;
+    document.querySelector('#equal').onclick = calcula;
 }
 
-numbers.forEach(function(val, ind) {
-    if (ind == 0) {
-        numbers[ind].addEventListener('click', function() {
-            showNumber.textContent = '';
-        })
-    } else if (ind == 1) {
-        clickNumbers(ind, val = 7);
-    } else if (ind == 2) {
-        clickNumbers(ind, val = 8);
-    } else if (ind == 3) {
-        clickNumbers(ind, val = 9);
-    } else if (ind == 4) {
-        clickNumbers(ind, val = 4);
-    } else if (ind == 5) {
-        clickNumbers(ind, val = 5);
-    } else if (ind == 6) {
-        clickNumbers(ind, val = 6);
-    } else if (ind == 7) {
-        clickNumbers(ind, val = 1);
-    } else if (ind == 8) {
-        clickNumbers(ind, val = 2);
-    } else if (ind == 9) {
-        clickNumbers(ind, val = 3);
-    } else if (ind == 10) {
-        clickNumbers(ind, val = 0);
-    } else if (ind == 11) {
-        clickNumbers(ind, val = '.');
-    }
-})
+let sValor = '0';
+let ehNovoNumero = true;
+let valorAnterior = 0;
+let operacaoPendente = null;
 
-symbolsOperation.forEach(function(val, ind) {
-    if (ind == 0) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            console.log('reset button')
-        })
-    } else if (ind == 1) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            console.log('percent button')
-        })
-    } else if (ind == 2) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            calculateNumbers += '/'
-            console.log(calculateNumbers)
-        })
-    } else if (ind == 3) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            calculateNumbers += '*'
-            console.log(calculateNumbers)
-        })
-    } else if (ind == 4) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            calculateNumbers += '-'
-            console.log(calculateNumbers)
-        })
-    } else if (ind == 5) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            calculateNumbers += '+'
-            console.log(calculateNumbers)
-        })
-    } else if (ind == 6) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            console.log('equals button')
-        })
-    } else if (ind == 7) {
-        symbolsOperation[ind].addEventListener('click', function() {
-            console.log('plus and minus button')
-        })
+const atualizaVisor = () => {
+    let [parteInteira, parteDecimal] = sValor.split(',');
+    let valor = '';
+    let count = 0;
+    for (let i = parteInteira.length - 1; i >= 0; i--) {
+        if (++count > 3) {
+            valor = '.' + valor;
+            count = 1;
+        }
+        valor = parteInteira[i] + valor;
     }
-})
+    valor = valor + (parteDecimal ? ',' + parteDecimal : '');
+    document.querySelector('#show-result').innerText = valor;
+};
+
+const digito = (number) => {
+    if (ehNovoNumero) {
+        sValor = '' + number;
+        ehNovoNumero = false;
+    } else {
+        sValor += number;
+    }
+    atualizaVisor();
+};
+
+const virgula = () => {
+    if (ehNovoNumero) {
+        sValor = '0,';
+        ehNovoNumero = false;
+    } else if (sValor.indexOf(',') == -1) {
+        sValor += ',';
+    }
+    atualizaVisor();
+};
+
+const limpa = () => {
+    ehNovoNumero = true;
+    valorAnterior = 0;
+    sValor = '0';
+    operacaoPendente = null;
+    atualizaVisor();
+};
+
+const valorAtual = () => parseFloat(sValor.replace(',', '.'));
+
+const operador = (op) => {
+    calcula();
+    valorAnterior = valorAtual();
+    operacaoPendente = op;
+    ehNovoNumero = true;
+};
+
+const calcula = () => {
+    if (operacaoPendente !== null) {
+        let resultado;
+        switch(operacaoPendente) {
+            case '+': resultado = valorAnterior + valorAtual(); break;
+            case '-': resultado = valorAnterior - valorAtual(); break;
+            case '*': resultado = valorAnterior * valorAtual(); break;
+            case '/': resultado = valorAnterior / valorAtual(); break;
+        }
+        sValor = resultado.toString().replace('.', ',');
+    }
+    ehNovoNumero = true;
+    operacaoPendente = null;
+    valorAnterior = 0;
+    atualizaVisor();
+};
