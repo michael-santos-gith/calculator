@@ -6,55 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- GOOGLE ICONS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <!-- FONTAWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <div id="container">
-        <div id="bar-dark-light">
-            <span<i class="fa fa-brightness"></i></span>
-            <a href="#"><span<i class="fa fa-moon fa-inverse"></i></span></a>
-        </div>
-        <div id="area-calc">
-            <span id="show-number"></span>
-            <hr/>
-        </div>
-        <div id="area-numbers">
-            <div class="numbers">
-                <div><a class="numbers-click" href="#"><span><i id="ac" class="fa-solid">AC</i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-delete-left fa-xs"></i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-percent fa-xs"></i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-divide fa-xs"></i></span></a></div>
-            </div>
-            <div class="numbers">
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">7</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">8</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">9</i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-xmark fa-xs"></i></span></a></div>
-            </div>
-            <div class="numbers">
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">4</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">5</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">6</i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-minus fa-xs"></i></span></a></div>
-            </div>
-            <div class="numbers">
-                <div><a class="numbers-click" href="#"><span><i id="um" class="fa-solid">1</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i id="dois" class="fa-solid">2</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i id="tres" class="fa-solid">3</i></span></a></div>
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-plus fa-xs"></i></span></a></div>
-            </div>
-            <div class="numbers">
-                <div><a class="symbols-operation" href="#"><span><i class="fa-solid fa-plus-minus fa-xs"></i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i id="zero" class="fa-solid">0</i></span></a></div>
-                <div><a class="numbers-click" href="#"><span><i class="fa-solid">,</i></span></a></div>
-                <div><a class="symbols-operation" id="equals" href="#"><span><i class="fa-solid fa-equals fa-xs"></i></span></a></div>
-            </div>
+    <div id="display">
+        <div id="container">
+          <p id="show-result">0</p>
+          <a id="clean" href=#>C</a>
+          <a id="reset" href="#">AC</a>
+          <a id="percent" href="#">%</a>
+          <a class="number" id="seven" href="#">7</a>
+          <a class="number" id="eight" href="#">8</a>
+          <a class="number" id="nine" href="#">9</a>
+          <a id="minus" href="#">&#8722;</a>
+          <a class="number" id="four" href="#">4</a>
+          <a class="number" id="five" href="#">5</a>
+          <a class="number" id="six" href="#">6</a>
+          <a id="multiply" href="#">&#215;</a>
+          <a class="number" id="one" href="#">1</a>
+          <a class="number" id="two" href="#">2</a>
+          <a class="number" id="three" href="#">3</a>
+          <a id="devide" href="#">&#247;</a>
+          <a class="number" id="zero" href="#">0</a>
+          <a id="comma" href="#">.</a>
+          <a id="plus-minus" href="#">&#177;</a>
+          <a id="plus" href="#">&#43;</a>   
+          <a id="equal" href="#">&#61;</a>
         </div>
     </div>
 
