@@ -11,6 +11,7 @@ font-size: 16px;
 #container {
 display: grid;
 grid-template-columns: repeat(4, 70px);
+justify-content: center;
 align-content: center;
 gap: 10px;
 height: 100vh;
