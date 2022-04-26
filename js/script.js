@@ -71,8 +71,14 @@ const limpa = () => {
 const resetar = () => {
     let valorAtual = document.querySelector('#show-result').innerText;
     let retorno;
-    retorno = document.querySelector('#show-result').innerText = valorAtual.substring(0, valorAtual.length - 1);
-    sValor = retorno;
+    retorno = valorAtual.substring(0, valorAtual.length - 1);
+    if (retorno == '') {
+        retorno = '0';
+        sValor = retorno;
+    } else {
+        sValor = retorno;
+    }
+    document.querySelector('#show-result').innerText = retorno;
 }
 
 const valorAtual = () => parseFloat(sValor.replace(',', '.'));
