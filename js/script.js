@@ -13,6 +13,7 @@ onload = () => {
     document.querySelector('#multiply').onclick = () => operador('*');
     document.querySelector('#minus').onclick = () => operador('-');
     document.querySelector('#plus').onclick = () => operador('+');
+    document.querySelector('#reset').onclick = () => resetar();
     document.querySelector('#comma').onclick = virgula;
     document.querySelector('#clean').onclick = limpa;
     document.querySelector('#equal').onclick = calcula;
@@ -35,6 +36,7 @@ const atualizaVisor = () => {
         valor = parteInteira[i] + valor;
     }
     valor = valor + (parteDecimal ? ',' + parteDecimal : '');
+    valor = valor.replace('..', '.');
     document.querySelector('#show-result').innerText = valor;
 };
 
@@ -65,6 +67,13 @@ const limpa = () => {
     operacaoPendente = null;
     atualizaVisor();
 };
+
+const resetar = () => {
+    let valorAtual = document.querySelector('#show-result').innerText;
+    let retorno;
+    retorno = document.querySelector('#show-result').innerText = valorAtual.substring(0, valorAtual.length - 1);
+    sValor = retorno;
+}
 
 const valorAtual = () => parseFloat(sValor.replace(',', '.'));
 
