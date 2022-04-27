@@ -14,6 +14,7 @@ onload = () => {
     document.querySelector('#minus').onclick = () => operador('-');
     document.querySelector('#plus').onclick = () => operador('+');
     document.querySelector('#reset').onclick = () => resetar();
+    document.querySelector('#percent').onclick = () => porcento();
     document.querySelector('#comma').onclick = virgula;
     document.querySelector('#clean').onclick = limpa;
     document.querySelector('#equal').onclick = calcula;
@@ -74,6 +75,14 @@ const resetar = () => {
     retorno = valorAtual.substring(0, valorAtual.length - 1);
     sValor = retorno;
     document.querySelector('#show-result').innerText = sValor;
+}
+
+const porcento = () => {
+    let resultado = sValor * 0.01;
+    resultado = resultado.toString();
+    resultado = resultado.replace('.', ',');
+    sValor = resultado;
+    atualizaVisor();
 }
 
 const valorAtual = () => parseFloat(sValor.replace(',', '.'));
