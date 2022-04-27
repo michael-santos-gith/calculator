@@ -72,13 +72,8 @@ const resetar = () => {
     let valorAtual = document.querySelector('#show-result').innerText;
     let retorno;
     retorno = valorAtual.substring(0, valorAtual.length - 1);
-    if (retorno == '') {
-        retorno = '0';
-        sValor = retorno;
-    } else {
-        sValor = retorno;
-    }
-    document.querySelector('#show-result').innerText = retorno;
+    sValor = retorno;
+    document.querySelector('#show-result').innerText = sValor;
 }
 
 const valorAtual = () => parseFloat(sValor.replace(',', '.'));

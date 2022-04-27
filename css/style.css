@@ -19,10 +19,12 @@ padding: 5px;
 }
 
 #container p {
-padding: 15px;
+height: 50px;
+padding-right: 5px;
 text-align: right;
 font-size: 18px;
 border: 5px groove #000;
+line-height: 2;
 }
 
 #container a {
