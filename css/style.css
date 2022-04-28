@@ -14,8 +14,9 @@ body {
   justify-content: center;
   align-content: center;
   gap: 10px;
+  max-width: 529px;
   height: 100vh;
-  padding: 5px;
+  margin: auto;
   background-color: #75BCF2;
 }
 
