@@ -15,6 +15,7 @@ onload = () => {
     document.querySelector('#plus').onclick = () => operador('+');
     document.querySelector('#reset').onclick = () => resetar();
     document.querySelector('#percent').onclick = () => porcento();
+    document.querySelector('#plus-minus').onclick = () => maisOuMenos();
     document.querySelector('#comma').onclick = virgula;
     document.querySelector('#clean').onclick = limpa;
     document.querySelector('#equal').onclick = calcula;
@@ -38,7 +39,8 @@ const atualizaVisor = () => {
     }
     valor = valor + (parteDecimal ? ',' + parteDecimal : '');
     valor = valor.replace('..', '.');
-    document.querySelector('#show-result').innerText = valor;
+    sValor = valor;
+    document.querySelector('#show-result').innerText = sValor;
 };
 
 const digito = (number) => {
@@ -82,6 +84,16 @@ const porcento = () => {
     resultado = resultado.toString();
     resultado = resultado.replace('.', ',');
     sValor = resultado;
+    atualizaVisor();
+}
+
+const maisOuMenos = () => {
+    if (Math.sign(sValor) == 1) {
+        sValor = -sValor;
+    } else if (Math.sign(sValor) == -1) {
+        sValor = Math.abs(sValor);
+    }
+    sValor = sValor.toString();
     atualizaVisor();
 }
 
